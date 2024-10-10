@@ -6,16 +6,16 @@ const TeamList = ({ teams, handleJoin }) => {
 	const availableTeams = teams.filter((team) => team.members.length < 4);
 
 	return (
-		<div className="max-w-5xl mx-auto">
-			<h2 className="text-3xl font-bold mb-6 text-center text-blue-600">
+		<div className="w-screen h-full bg-blue-950 px-10">
+			<h2 className="text-4xl font-bold mb-6 text-center text-white">
 				Available Teams to Join
 			</h2>
 			{availableTeams.length === 0 ? (
-				<p className="text-center text-gray-500">
-					No available teams to join. Be the first to create one!
+				<p className="text-center text-xl text-gray-400 ">
+					No available teams to join. You can create one!
 				</p>
 			) : (
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="flex flex-col gap-4 flex-grow">
 					{availableTeams.map((team) => (
 						<TeamCard key={team.id} team={team} handleJoin={handleJoin} />
 					))}
